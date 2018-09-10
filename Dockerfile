@@ -15,8 +15,8 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - \
 RUN mkdir -p opt/oracle
 ADD ./oracle/linux/ .
 
-RUN unzip instantclient-basic-linux.x64-12.1.0.1.0.zip -d /opt/oracle \
-    && unzip instantclient-sdk-linux.x64-12.1.0.1.0.zip -d /opt/oracle  \
+RUN unzip instantclient-basic-linux.x64-12.1.0.2.0.zip -d /opt/oracle \
+    && unzip instantclient-sdk-linux.x64-12.1.0.2.0.zip -d /opt/oracle  \
     && mv /opt/oracle/instantclient_12_1 /opt/oracle/instantclient \
     && ln -s /opt/oracle/instantclient/libclntsh.so.12.1 /opt/oracle/instantclient/libclntsh.so \
     && ln -s /opt/oracle/instantclient/libocci.so.12.1 /opt/oracle/instantclient/libocci.so
