@@ -12,6 +12,11 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - \
     && apt-get install -y nodejs  
 
 #ADD ORACLE INSTANT CLIENT
+# From http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html
+#  Download the following two ZIPs to ./oracle/linux:
+#    - instantclient-basic-linux.x64-12.2.0.1.0.zip
+#    - instantclient-sdk-linux.x64-12.2.0.1.0.zip
+
 RUN mkdir -p opt/oracle
 ADD ./oracle/linux/ .
 
