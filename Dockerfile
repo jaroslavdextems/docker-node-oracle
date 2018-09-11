@@ -1,15 +1,7 @@
-FROM ubuntu:14.04
+FROM node:10-alpine
 
-# Install Node.js
-RUN apt-get update \
-    && apt-get install -y libaio1 \
-    && apt-get install -y unzip \
-    && apt-get install --yes curl \
-    && apt-get install --yes build-essential 
-
-# 10.x to Node.js 10.X, it can be specified for V8.X and other
-RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - \ 
-    && apt-get install -y nodejs  
+RUN apk update && apk upgrade && \
+    apk add --no-cache libaio unzip
 
 #ADD ORACLE INSTANT CLIENT
 RUN mkdir -p opt/oracle
